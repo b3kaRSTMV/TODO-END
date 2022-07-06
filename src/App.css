@@ -1,8 +1,9 @@
 .App{
   border:1px solid rgb(142, 142, 142);
   border-radius: 5px;
-  width: 550px;
+  width: 600px;
   margin: 120px auto;
+  border: 1px solid purple;
 }
 
 .todo_body{

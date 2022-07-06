@@ -27,7 +27,7 @@ export function Todo(props) {
             <div>
                 {
                     state ?
-                        <form onSubmit={editSubmit}>
+                        <form className="editInput" onSubmit={editSubmit}>
                             <input
                                 value={inpVal}
                                 type="text"
