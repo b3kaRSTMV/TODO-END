@@ -12,7 +12,7 @@ export function Createtodo(props) {
     }
 
     return (
-        <form class="form_wrapper" onSubmit={submit}>
+        <form className="form_wrapper" onSubmit={submit}>
             <input
                 value={inputValue}
                 type="text"

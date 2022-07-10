@@ -19,7 +19,13 @@ function App() {
   const addNewTodo = (str) => {
     setState([...state, { text: str, status: false, id: Date.now() }])
   }
-
+  const [isPending, setPending] = useState(true)
+  useEffect(()=>{
+    setTimeout(()=>{
+      setPending(false);
+    },
+    3000)
+  },   [])
 
   const deleteTodo = (id) => {
     const newArr = state.filter((item) => item.id !== id);
@@ -51,7 +57,13 @@ if (todo.id === id){
   setState(newArr)
 }
 
-
+if (isPending){
+  return(
+    <div className='preloader'>
+      <img src="https://img.pikbest.com/png-images/20190918/cartoon-snail-loading-loading-gif-animation_2734139.png!bw340" alt='preloader'></img>
+    </div>
+  )
+}
 
 
   return (
@@ -61,7 +73,11 @@ if (todo.id === id){
         <Createtodo addNew={addNewTodo} />
         <div className="todo_items">
           {
-            state.map((item) => <Todo
+            state.length
+            ?
+            state.map((item) => 
+        <Todo
+              key = {item.id}
               text={item.text}
               checked={item.status}
               id={item.id}
@@ -69,6 +85,7 @@ if (todo.id === id){
               onCheck={onCheck}
               onEditText={onEditText}
             />)
+            :<h1 className='addTodo'>PLease add todo</h1>
           }
         </div>
       </div>

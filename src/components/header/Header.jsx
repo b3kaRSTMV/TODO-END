@@ -1,9 +1,10 @@
 
 import "./header.css"
 export function Header (props){
+    const result = props.state.filter((item) => item.status)
     return (
         <header className = "Header_wrapper">
-         Todos <span> ({props.state.length} / {props.state.filter((item) => item.checked).length})</span>
+         Todos ({result.length}/{props.state.length})
         </header>
     )
 }
