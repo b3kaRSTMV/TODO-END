@@ -33,3 +33,8 @@
   width: 400px;
   height: 400px;
 }
+@media (max-width:768px){
+.App{
+  width: 95%;
+  }
+}

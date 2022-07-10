@@ -45,8 +45,8 @@ export function Todo(props) {
             </div>
 
             <div>
-                <button onClick={Edit} className="btn btn-success">Edit</button>
-                <button onClick={onDelete} className="btn btn-danger delete">Delete</button>
+                <button onClick={Edit} className="btn btn-success">Изменить</button>
+                <button onClick={onDelete} className="btn btn-danger delete">Удалить</button>
             </div>
         </div>
     )
